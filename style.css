@@ -1,0 +1,408 @@
+*{
+    /* border: solid; */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.nav-items{
+    display: none;
+}
+
+.off-screen-menu {
+    background-color:  white;
+    height: 22.5rem;
+    width: 100%;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;    
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .7s ease;
+}
+
+.off-screen-menu a{
+    color: #666666;
+}
+
+.off-screen-menu.active {
+    top: 0;
+}
+
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.off-screen-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.off-screen-menu ul li {
+    list-style: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 0.3s ease;
+}
+
+.off-screen-menu.active ul li {
+    animation: dropIn 0.5s forwards ease-out;
+}
+
+.off-screen-menu ul li.closing {
+    animation: dropOut 0.25s forwards ease-out;
+}
+
+.off-screen-menu ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.off-screen-menu ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.off-screen-menu ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+nav {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.Bname{
+    font-size: 2rem;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+
+}
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span {
+    background-color: black;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+li{
+    list-style: none;
+    padding: 0.5rem 2rem;
+    text-align: left;
+}
+
+li a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.hero-banner{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+
+.hero-text{
+    font-size: 3rem;
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.button-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.button-holder button{
+    padding: 1.25rem 6rem;
+    margin: 0.5rem;
+    border-radius: 3rem;
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    font-weight: 500;
+    border: none;
+    text-wrap: nowrap;
+}
+
+.sidekick{
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.sidekick-title{
+    font-weight: 600;
+    padding-left: 1rem;
+    margin-top: 3rem;
+}
+
+.project-card{
+    margin: 1rem;
+    margin-bottom: 3rem;
+}
+.subtext{
+    padding: 1rem 1rem;
+    font-weight: 300;
+}
+
+.project-card .subtext{
+    padding: 1rem 0;
+    font-weight: 500;
+}
+
+.card-title{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.info-card{
+    margin: 0.5rem 0;
+}
+
+.label{
+    color: #666666;
+}
+
+.value{
+    font-weight: 300;
+}
+
+img{
+    object-fit: cover;
+    max-width: 100%;
+}
+
+footer{
+    margin: 1rem;
+    color: #666666;
+}
+
+.email{
+    font-size: 2.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 700ms ease-in-out;
+}
+
+.email:hover{
+    color: black;
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+}
+
+a{
+    text-decoration: none;
+    color: #666666;
+}
+
+@media (min-width: 800px){
+
+    .off-screen-menu ,.ham-menu{
+        display: none;
+    }
+
+    .nav-items{
+        display: inline;
+        margin: 0 1rem;
+    }
+
+    .Bname{
+        padding-left: 1rem;
+    }
+
+    .nav-items span{
+        margin: 1rem;
+        color: #666666;
+    }
+
+    .button-holder{
+        justify-content: start;
+        margin-top: 4rem;
+        padding-left: 2rem;
+    }
+
+    .button-holder button{
+        padding: 1.5rem 3rem;
+        font-size: 1rem;
+    }
+
+    .hero-text{
+        font-size: 4rem;
+        padding-left: 2rem;
+    }
+
+    .sidekick{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 4rem;
+    }
+
+    .sidekick-title{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .subtext-holder{
+        flex: 4;
+    }
+
+    .projects{
+        margin:4rem 2rem;
+    }
+
+    .projects .sidekick-title{
+        align-items: center;
+        justify-content: start;
+        margin: 2rem 0;
+    }
+
+    .columns{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .columns .subtext{
+        flex: 2;
+    }
+
+    .columns .info-card-holder{
+        flex: 1;
+    }
+
+    .info-card{
+        margin: 1rem;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .email-holder{
+        padding-left: 2rem;
+    }
+
+    .socials div{
+        margin: 1rem;
+    }
+
+}
+
+@media (min-width: 1200px){
+
+    .Bname{
+        padding-left: 3rem;
+    }
+
+    .hero-banner{
+        align-items: start;
+        padding-left: 3rem;
+    }
+
+    .hero-text{
+        max-width: 40rem;
+        align-items: start;
+    }
+
+    .sidekick{
+        margin-left: -2rem;
+    }
+
+    .sidekick .subtext{
+        max-width: 90%;
+    }
+
+    .button-holder{
+        margin-left: 3rem;
+    }
+
+    .projects{
+        margin-left: 5rem;
+    }
+
+    footer{
+        margin:0rem 2rem 0rem 4rem;
+    }
+}
